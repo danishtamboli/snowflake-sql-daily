@@ -1,5 +1,6 @@
--- Problem: Find the second highest salary
+-- Problem: Get employee names with their department names
 
-SELECT MAX(salary) AS second_highest_salary
-FROM employees
-WHERE salary < (SELECT MAX(salary) FROM employees);
+SELECT e.name, d.department_name
+FROM employees e
+INNER JOIN departments d
+ON e.department_id = d.department_id;
